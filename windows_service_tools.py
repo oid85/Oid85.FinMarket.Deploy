@@ -1,5 +1,6 @@
 import win32serviceutil
 
+
 def service_running(service, machine):
     status = (win32serviceutil.QueryServiceStatus(service)[1] == 4)
     if not status:
