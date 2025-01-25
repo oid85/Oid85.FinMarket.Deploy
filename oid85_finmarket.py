@@ -51,10 +51,10 @@ def deploy():
     # установка и запуск службы
     cmd = f'sc create {service_name} binPath={exe_file_path}'
     print(cmd)
-    # res = os.system(cmd)
+    res = os.system(cmd)
     print(res)
 
     cmd = f'sc start {service_name}'
     print(cmd)
-    # res = os.system(cmd)
+    res = os.system(cmd)
     print(res)
