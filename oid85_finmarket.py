@@ -2,17 +2,19 @@ import time
 import os
 
 # sc create "Oid85 FinMarket Service" binPath="...exe"
-# sc delete "Oid85 FinMarket Service"
 
 
 def deploy():
-    source_path = "C:\Repository\Oid85.FinMarket\Oid85.FinMarket"
-    deploy_path = "C:\Deploy"
-    deploy_directory = "Oid85.FinMarket"
-    service_name = "Oid85 FinMarket Service"
+    source_path = 'C:\Repository\Oid85.FinMarket\Oid85.FinMarket'
+    deploy_path = 'C:\Deploy'
+    deploy_directory = 'Oid85.FinMarket'
+    #service_name = 'Oid85 FinMarket Service'
+    service_name = 'tvnserver'
 
     # остановка и удаление службы
-
+    os.system(f'sc stop """{service_name}"""')
+    #os.system(f'sc delete """{service_name}"""')
+"""
     # формируем директории
     if not os.path.exists(deploy_path):
         os.makedirs(deploy_path)
@@ -32,3 +34,4 @@ def deploy():
     os.system(f"cd {source_path} && dotnet build --configuration Release --output {path}")
 
     # установка и запуск службы
+"""
