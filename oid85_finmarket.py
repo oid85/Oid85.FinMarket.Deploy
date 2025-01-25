@@ -30,18 +30,18 @@ def deploy():
     current_time = time.time()
     current_deploy_version = f"{current_time}"
 
-    path = os.path.join(deploy_path, deploy_directory, current_deploy_version)
+    dest_path = os.path.join(deploy_path, deploy_directory, current_deploy_version)
 
-    if not os.path.exists(path):
-        os.makedirs(path)
+    if not os.path.exists(dest_path):
+        os.makedirs(dest_path)
 
     # build
-    cmd = f'cd {source_path} && dotnet build --configuration Release --output {path}'
+    cmd = f'cd {source_path} && dotnet build --configuration Release --output {dest_path}'
     print(cmd)
     res = os.system(cmd)
     print(res)
 
-    exe_file_path = os.path.join(path, exe_file_name)
+    exe_file_path = os.path.join(dest_path, exe_file_name)
 
     # установка и запуск службы
     cmd = f'sc create {service_name} binPath={exe_file_path}'
