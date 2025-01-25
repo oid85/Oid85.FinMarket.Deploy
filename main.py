@@ -1,10 +1,6 @@
-import time
-
-
-def do():
-    while True:
-        time.sleep(30)
-
+import oid85_finmarket
+import oid85_finmarket_app
 
 if __name__ == '__main__':
-    do()
+    oid85_finmarket.deploy()
+    # oid85_finmarket_app.deploy()
