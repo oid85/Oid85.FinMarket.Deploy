@@ -1,5 +1,6 @@
 import time
 import os
+import shutil
 
 
 def deploy():
@@ -8,6 +9,7 @@ def deploy():
     deploy_directory = 'Oid85.FinMarket'
     exe_file_name = "Oid85.FinMarket.WebHost.exe"
     service_name = 'Oid85.FinMarket'
+    app_settings_file = 'appsettings.json'
 
     # остановка и удаление службы
     cmd = f'sc stop {service_name}'
@@ -41,15 +43,18 @@ def deploy():
     res = os.system(cmd)
     print(res)
 
+    # копируем appsettings.json
+    shutil.copy(app_settings_file, dest_path)
+
     exe_file_path = os.path.join(dest_path, exe_file_name)
 
     # установка и запуск службы
     cmd = f'sc create {service_name} binPath={exe_file_path}'
     print(cmd)
-    res = os.system(cmd)
+    # res = os.system(cmd)
     print(res)
 
     cmd = f'sc start {service_name}'
     print(cmd)
-    res = os.system(cmd)
+    # res = os.system(cmd)
     print(res)
