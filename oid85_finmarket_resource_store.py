@@ -1,4 +1,3 @@
-import time
 import os
 import shutil
 
@@ -8,17 +7,15 @@ def deploy():
     deploy_path = 'C:\\Deploy'
     deploy_directory = 'Oid85.FinMarket.ResourceStore'
 
-    # формируем директории
+    # формируем директориЮ
     if not os.path.exists(deploy_path):
         os.makedirs(deploy_path)
 
-    if not os.path.exists(os.path.join(deploy_path, deploy_directory)):
-        os.makedirs(os.path.join(deploy_path, deploy_directory))
+    # удаляем папку
+    if os.path.exists(os.path.join(deploy_path, deploy_directory)):
+        shutil.rmtree(os.path.join(deploy_path, deploy_directory))
 
-    current_time = time.time()
-    current_deploy_version = f"{current_time}"
-
-    dest_path = os.path.join(deploy_path, deploy_directory, current_deploy_version)
+    dest_path = os.path.join(deploy_path, deploy_directory)
 
     if not os.path.exists(dest_path):
         os.makedirs(dest_path)
