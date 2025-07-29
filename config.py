@@ -6,8 +6,5 @@ finmarket_exe_file_name = "Oid85.FinMarket.WebHost.exe"
 finmarket_service_name = 'Oid85.FinMarket'
 finmarket_appsettings_file = 'appsettings.json'
 
-finmarket_app_source_path = 'C:\\Repository\\Oid85.FinMarket.App\\oid85-finmarket-app'
-finmarket_app_deploy_directory = 'Oid85.FinMarket.App'
-
 finmarket_store_source_path = 'C:\\Repository\\Oid85.FinMarket.ResourceStore\\store'
 finmarket_store_deploy_directory = 'Oid85.FinMarket.ResourceStore'
