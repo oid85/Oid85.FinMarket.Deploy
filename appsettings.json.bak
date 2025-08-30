@@ -28,12 +28,6 @@
   },
   
   "Hangfire": {
-    "LoadDailyCandles": {
-      "JobId": "LoadDailyCandles",
-      "Enable": true,
-      "Cron": "0 4 * * *"
-    },
-	
     "EarlyInTheDay": {
       "JobId": "EarlyInTheDay",
       "Enable": true,
