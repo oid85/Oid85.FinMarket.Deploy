@@ -52,3 +52,16 @@ def deploy():
     print(cmd)
     res = os.system(cmd)
     print(res)
+
+
+def deletet():
+    # остановка и удаление службы
+    cmd = f'sc stop {config.finmarket_service_name}'
+    print(cmd)
+    res = os.system(cmd)
+    print(res)
+
+    cmd = f'sc delete {config.finmarket_service_name}'
+    print(cmd)
+    res = os.system(cmd)
+    print(res)
